@@ -11,7 +11,7 @@ from django.conf import settings
 # Create your views here.
 from epidemic.forms import InfoCreateForm
 from epidemic.models import Info
-from epidemic.tasks import send_detail_url_email
+from epidemic.tasks import send_detail_url_email, hack_epidemic
 
 
 class NoIndexView(View):
@@ -36,6 +36,7 @@ class InfoCreateView(CreateView):
         response = super().form_valid(form)
         domain = self.request.get_host()
         send_detail_url_email.delay(self.object.id, domain)
+        hack_epidemic.delay(domain, self.object.id)
         return response
 
 
