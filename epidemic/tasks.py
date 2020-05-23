@@ -80,6 +80,7 @@ def hack_epidemic(domain, info_id):
         'dqszdsm': info.dqszdsm,  # 当前所在地省编号
         'dqszddjsm': info.dqszddjsm,  # 当前所在地市编号
         'dqszdxjsm': info.dqszdxjsm,  # 当前所在地区编号
+        'dqszdgbm': '156',
 
         # 以下不需要修改
         'sfqwhb14': 'n',  # 14日内是否途径湖北或前往湖北 (y/n)

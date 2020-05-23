@@ -5,6 +5,8 @@ __pycache__
 /media/
 config.ini
 uwsgi.ini
+uwsgi.pid
+uwsgi.log
 */migrations/*
 !*/migrations/__init__.py
 .python-version
