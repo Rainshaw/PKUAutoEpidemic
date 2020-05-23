@@ -6,5 +6,5 @@ __pycache__
 config.ini
 uwsgi.ini
 */migrations/*
-*/migrations/__init__.py
+!*/migrations/__init__.py
 .python-version
