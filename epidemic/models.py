@@ -75,6 +75,9 @@ class Info(BaseModel):
     is_email = models.BooleanField(default=True, verbose_name='通过邮件接收填写反馈')
     email = models.EmailField(verbose_name='邮箱地址')
 
+    is_wechat = models.BooleanField(default=False, verbose_name='通过微信接受反馈结果')
+    serverchan_token = models.CharField(max_length=128, blank=True, null=True, verbose_name='ServerChan的Secret Key')
+
     # hxsj = '',  # 回校时间，格式为“20200409 170200” 2020年4月9日17点02分00秒
     # cfdssm = '',  # 出发地省编号
     # cfddjsm = '',  # 出发地市编号

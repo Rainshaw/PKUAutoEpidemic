@@ -59,6 +59,22 @@ def send_epidemic_result(domain, info_id, result):
 
 
 @shared_task
+def send_wechat_result(info_id, result):
+    info = Info.objects.get(id=info_id)
+    if info.is_wechat:
+        token = info.serverchan_token
+        url = 'https://sc.ftqq.com/{}.send'.format(token)
+        post_form = {
+            'text': '燕园云战疫运行结果',
+            'desp': result,
+        }
+        try:
+            requests.post(url, data=post_form)
+        except requests.RequestException as e:
+            print(e)
+
+
+@shared_task
 def hack_epidemic(domain, info_id):
     sess = requests.Session()
     info = Info.objects.get(id=info_id)
@@ -109,6 +125,7 @@ def hack_epidemic(domain, info_id):
         print(e)
         result = '网络错误，请联系站长！'
     send_epidemic_result.delay(domain, info_id, result)
+    send_wechat_result.delay(info_id, result)
 
 
 @shared_task

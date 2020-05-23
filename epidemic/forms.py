@@ -26,7 +26,8 @@ class InfoCreateForm(forms.ModelForm, FormMixin):
             'dwwd': forms.TextInput(attrs={'class': 'form-control'}),
             'yqzd': forms.Select(attrs={'class': 'form-control'}),
             'jkm': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'})
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'serverchan_token': forms.TextInput(attrs={'class': 'form-control'}),
         }
         help_texts = {
             'pwd': '您的IAAA密码，值得注意的是，您不能开启OTP双重认证。',
@@ -37,4 +38,6 @@ class InfoCreateForm(forms.ModelForm, FormMixin):
             'dwdzxx': '这些信息的获取参见<a href="https://blog.ruixiaolu.com/archives/2020/05/23/79.html">如何获取定位编号</a>',
             'dwjd': '这些信息的获取参见<a href="https://blog.ruixiaolu.com/archives/2020/05/23/79.html">如何获取定位编号</a>',
             'dwwd': '这些信息的获取参见<a href="https://blog.ruixiaolu.com/archives/2020/05/23/79.html">如何获取定位编号</a>',
+            'email': '本项必填',
+            'serverchan_token': '请按照<a href="http://sc.ftqq.com/3.version">ServerChan官网教程</a>获取您的SecretKey并填入',
         }
