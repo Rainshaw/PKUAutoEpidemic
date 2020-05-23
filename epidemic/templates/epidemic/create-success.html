@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+    创建成功
+{% endblock %}
+
+{% block usermenu %}
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <img src="{% static 'images/headpicture/default2.jpg' %}" class="user-image" alt="User Image">
+        <span class="hidden-xs">{{ user.user_name }}</span>
+    </a>
+
+{% endblock %}
+
+{% block sidebarmenu %}
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li class="header">菜单栏</li>
+        <li>
+            <a href="{% url 'epidemic:index' %}"><i class="fa fa-home"></i>
+                <span>首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'epidemic:info-create' %}"><i class="fa fa-circle-o"></i>
+                <span>新增信息</span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content-header %}
+    <h1>首页</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-default">
+            <div class="box-body">
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i>恭喜！</h4>
+                    您的信息填写成功！已向您填写的邮箱发送一封邮件，请注意查收！
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

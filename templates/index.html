@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block subtitle %}
+    燕园云战疫
+{% endblock %}
+
+{% block logo %}
+    <a href="{% url 'epidemic:index' %}" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>P</b>ku</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>燕园云战疫</b></span>
+    </a>
+{% endblock %}
+
+{% block usermenu %}
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <img src="{% static 'images/headpicture/default2.jpg' %}" class="user-image" alt="User Image">
+        <span class="hidden-xs">{{ user.user_name }}</span>
+    </a>
+
+{% endblock %}
+
+{% block sidebarmenu %}
+    <ul class="sidebar-menu tree" data-widget="tree">
+        <li class="header">菜单栏</li>
+        <li>
+            <a href="{% url 'epidemic:index' %}"><i class="fa fa-home"></i>
+                <span>首页</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'epidemic:info-create' %}"><i class="fa fa-circle-o"></i>
+                <span>新增信息</span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content-header %}
+    <h1>首页</h1>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-default">
+            <div class="box-body">
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i>欢迎！</h4>
+                    点击左侧注册选项，填写您的信息。
+                </div>
+                <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-warning"></i> 注意!</h4>
+                    如您在使用过程中遇到任何问题，都可以与16级<a href="mailto:rxgao@pku.edu.cn">郜瑞啸</a>联系，再次感谢您的支持！
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}

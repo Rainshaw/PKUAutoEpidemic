@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    详细信息
+{% endblock %}
+
+{% block content-header %}
+    <h1>详细信息</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="box-tools">
+                        <button type="button" class="btn btn-primary"
+                                onclick="window.location.href='{% url 'epidemic:info-update' token %}'">编辑
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tbody>
+                        <tr>
+                            <th>#</th>
+                            <td>{{ info.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>学号</th>
+                            <td>{{ info.xh }}</td>
+                        </tr>
+                        <tr>
+                            <th>密码</th>
+                            <td>{{ info.pwd }}</td>
+                        </tr>
+                        <tr>
+                            <th>当前所在省编号</th>
+                            <td>{{ info.dqszdsm }}</td>
+                        </tr>
+                        <tr>
+                            <th>当前所在市编号</th>
+                            <td>{{ info.dqszddjsm }}</td>
+                        </tr>
+                        <tr>
+                            <th>当前所在区/县编号</th>
+                            <td>{{ info.dqszdxjsm }}</td>
+                        </tr>
+                        <tr>
+                            <th>当前所在地详细地址</th>
+                            <td>{{ info.dqszdxxdz }}</td>
+                        </tr>
+                        <tr>
+                            <th>今日体温（如\'36.8\')</th>
+                            <td>{{ info.jrtw }}</td>
+                        </tr>
+                        <tr>
+                            <th>定位地址信息</th>
+                            <td>{{ info.dwdzxx }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>定位经度</th>
+                            <td>{{ info.dwjd }}</td>
+                        </tr>
+                        <tr>
+                            <th>定位纬度</th>
+                            <td>{{ info.dwwd }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>疫情诊断</th>
+                            <td>{{ info.yqzd }}</td>
+                        </tr>
+                        <tr>
+                            <th>健康码状态</th>
+                            <td>{{ info.jkm }}</td>
+                        </tr>
+                        <tr>
+                            <th>邮箱地址</th>
+                            <td>{{ info.email }}</td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix">
+
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+
+
+{% endblock %}

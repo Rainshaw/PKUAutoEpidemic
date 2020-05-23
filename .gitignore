@@ -1,0 +1,10 @@
+.idea
+.venv
+__pycache__
+/static/
+/media/
+config.ini
+uwsgi.ini
+*/migrations/*
+*/migrations/__init__.py
+.python-version
