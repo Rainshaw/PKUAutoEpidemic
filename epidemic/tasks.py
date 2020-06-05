@@ -114,7 +114,7 @@ def hack_epidemic(domain, info_id):
         'dwdzxx': info.dwdzxx,  # 定位地址信息
         'dwjd': info.dwjd,  # 定位经度
         'dwwd': info.dwwd,  # 定位纬度
-        'sfdrfj': '',
+        'sfdrfj': '' if info.dqszdsm != '11' else 'n',
         'chdfj': '',
         'jkm': info.jkm,  # 健康码状态
         'simstoken': '',
