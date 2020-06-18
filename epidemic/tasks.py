@@ -30,13 +30,13 @@ def send_detail_url_email(self, info_id, domain):
     print('-----尝试发送邮件-------')
     subject, from_email, to = '燕园云战疫注册', settings.EMAIL_FROM, [to_email]
     html_content = loader.render_to_string(
-        'email/epidemic/detail_view_email.html',               #需要渲染的html模板
-                        {
-                            'user_name': user_name,
-                            'domain': domain,
-                            'active_url': active_url
-                        }
-                   )
+        'email/epidemic/detail_view_email.html',  # 需要渲染的html模板
+        {
+            'user_name': user_name,
+            'domain': domain,
+            'active_url': active_url
+        }
+    )
 
     my_send_mail.delay(subject, html_content, from_email, to)
 
@@ -98,7 +98,6 @@ def hack_epidemic(domain, info_id):
         'dqszdxjsm': info.dqszdxjsm,  # 当前所在地区编号
         'dqszdgbm': '156',
 
-
         'jrtw': info.jrtw,  # 今日体温（如'36.8')
         'sfczzz': 'n',  # 是否存在病症
         'jqxdgj': '',  # 行动轨迹
@@ -114,8 +113,8 @@ def hack_epidemic(domain, info_id):
         'jkm': info.jkm,  # 健康码状态
         'simstoken': '',
 
-        'sfmjqzbl': 'n',  #是否与确诊病例密接，尚未解除观察
-        'sfmjmjz': 'n',  #是否与确诊病例密接者密接，尚未解除观察
+        'sfmjqzbl': 'n',  # 是否与确诊病例密接，尚未解除观察
+        'sfmjmjz': 'n',  # 是否与确诊病例密接者密接，尚未解除观察
         'sfxfd': 'n',  # 5月30日（含）以来，是否去过北京市新发地批发市场
         'sfxfd_jr': 'n',  # 共同生活的家人5月30日（含）以来，是否去过北京市新发地批发市场
         'hsjcjg': '',  # 核酸检测结果
