@@ -89,5 +89,5 @@ def tianbiao(username, password, post_form):
     res = session.get(url)
     url = 'https://ssop.pku.edu.cn/stuAffair/edu/pku/stu/sa/jpf/yqfk/stu/saveMrtb.do'
     res = session.post(url, data=post_form)
-    print(res.json())
+    # print(res.json())
     return res.text

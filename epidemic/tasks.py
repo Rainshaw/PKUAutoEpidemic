@@ -98,11 +98,6 @@ def hack_epidemic(domain, info_id):
         'dqszdxjsm': info.dqszdxjsm,  # 当前所在地区编号
         'dqszdgbm': '156',
 
-        # 以下不需要修改
-        'sfqwhb14': 'n',  # 14日内是否途径湖北或前往湖北 (y/n)
-        'sfjchb14': 'n',  # 14日内是否接触过来自湖北地区的人员 (y/n)
-        'sfqwjw14': 'n',  # 14日内是否有境外旅居史 (y/n)
-        'sfjcjw14': 'n',  # 14日内是否接触过境外人员 (y/n)
 
         'jrtw': info.jrtw,  # 今日体温（如'36.8')
         'sfczzz': 'n',  # 是否存在病症
