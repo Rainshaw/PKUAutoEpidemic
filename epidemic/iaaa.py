@@ -20,6 +20,5 @@ def login(username, password):
         "redirUrl": "https://portal.pku.edu.cn/portal2017/ssoLogin.do",
     }
 
-    res = requests.post(url=login_url, data=post_form)
-
+    res = sess.post(url=login_url, data=post_form)
     return res.json()['token'], sess

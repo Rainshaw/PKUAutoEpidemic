@@ -76,7 +76,6 @@ def send_wechat_result(info_id, result):
 
 @shared_task
 def hack_epidemic(domain, info_id):
-    sess = requests.Session()
     info = Info.objects.get(id=info_id)
 
     post_form = {
