@@ -6,6 +6,7 @@
 本程序安装环境需要
 - MySQL
 - RabbitMQ
+- Redis
 - Python 3.8
 
 本程序的`Python`环境依赖由Pipenv管理，安装Pipenv后进入项目目录，使用命令

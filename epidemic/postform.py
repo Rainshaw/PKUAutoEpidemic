@@ -8,7 +8,6 @@ def login(username, password):
     url = 'https://portal.pku.edu.cn/portal2017/ssoLogin.do?_rand={}&token={}'
     rand = str(random.random())
     url = url.format(rand, token)
-    # print(url)
     headers = {
         "Host": "portal.pku.edu.cn",
         "Connection": "keep-alive",
@@ -24,8 +23,6 @@ def login(username, password):
     }
     session = requests.session()
     session.get(url, headers=headers)
-    # print(session.cookies.values()[0])
-    # print("\n\n\n\n")
     return session.cookies.values()[0]
 
 
@@ -79,61 +76,17 @@ def auth(username, password):
     }
 
     res = requests.get(url, headers=headers)
-    # print(res.__dict__)
-    # print(res.cookies.items())
 
     url = res.url
-    # print(url)
     session = requests.session()
-    res = session.get(url)
-    # print(session.cookies.items())
-
-    # print(str(res.content, encoding='utf-8'))
-    # print(session.cookies.items())
-    # print(res.url)
+    session.get(url)
     return session
 
 
 def tianbiao(username, password, post_form):
     session = auth(username, password)
-
     url = 'https://ssop.pku.edu.cn/stuAffair/edu/pku/stu/sa/jpf/yqfk/stu/yqfk.jsp'
-
     res = session.get(url)
-
-    # post_form = {
-    #     'xh': '1600011378',
-    #     'sfhx': 'n',
-    #     'hxsj': '',
-    #     'cfdssm': '',
-    #     'cfddjsm': '',
-    #     'cfdxjsm': '',
-    #     'dqszdxxdz': '康瑞小区5-3-401',
-    #     'dqszdsm': '13',
-    #     'dqszddjsm': '05',
-    #     'dqszdxjsm': '30',
-    #     'dqszdgbm': '156',
-    #     'sfqwhb14': 'n',
-    #     'sfjchb14': 'n',
-    #     'sfqwjw14': 'n',
-    #     'sfjcjw14': 'n',
-    #     'sflsss': '',
-    #     'jrtw': '37',
-    #     'sfczzz': 'n',
-    #     'jqxdgj': '',
-    #     'qtqksm': '',
-    #     'tbrq': '20200522',
-    #     'yqzd': '健康',
-    #     'sfcx': '',
-    #     'dwdzxx': '河北省邢台市新河县新河镇富强街',
-    #     'dwjd': '115.23859',
-    #     'dwwd': '37.5145',
-    #     'sfdrfj': '',
-    #     'chdfj': '',
-    #     'jkm': '绿码',
-    #     'simstoken': '',
-    # }
-
     url = 'https://ssop.pku.edu.cn/stuAffair/edu/pku/stu/sa/jpf/yqfk/stu/saveMrtb.do'
     res = session.post(url, data=post_form)
     print(res.json())

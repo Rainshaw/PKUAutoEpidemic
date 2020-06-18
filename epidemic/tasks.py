@@ -118,6 +118,14 @@ def hack_epidemic(domain, info_id):
         'chdfj': '',
         'jkm': info.jkm,  # 健康码状态
         'simstoken': '',
+
+        'sfmjqzbl': 'n',  #是否与确诊病例密接，尚未解除观察
+        'sfmjmjz': 'n',  #是否与确诊病例密接者密接，尚未解除观察
+        'sfxfd': 'n',  # 5月30日（含）以来，是否去过北京市新发地批发市场
+        'sfxfd_jr': 'n',  # 共同生活的家人5月30日（含）以来，是否去过北京市新发地批发市场
+        'hsjcjg': '',  # 核酸检测结果
+        'jjgcsj': '',  # 开始居家健康观察的时间
+        'sfzgfxdq': 'n',  # 目前是否居住在中高风险地区
     }
     try:
         result = tianbiao(info.xh, info.pwd, post_form)
